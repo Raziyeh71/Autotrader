@@ -1,0 +1,26 @@
+# Environment variables
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+venv/
+env/
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Market data
+market_data/
+*.pkl
+
+# IDE specific files
+.vscode/
+.idea/
+*.swp
+.DS_Store
