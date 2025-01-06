@@ -1,37 +1,32 @@
 # AutoTrader
 
-An advanced automated trading system that combines deep learning models, news analysis, and technical indicators for making informed trading decisions.
+An intelligent trading system that combines machine learning models, market analysis, and technical indicators to assist in making informed trading decisions.
 
 ## Features
 
-### Advanced AI Models
-- **Galformer**: Custom transformer architecture with gated linear attention for market prediction
-- **LSTM & GRU**: Deep learning models for time series analysis
-- **Few-Shot Learning**: Pattern recognition using 10-100 examples for market similarity analysis
-
-### News Analysis
-- Real-time news monitoring from Yahoo Finance
-- GPT-4 powered news impact analysis
-- Sentiment analysis and market impact prediction
-- News-driven opportunity detection
+### AI-Powered Analysis
+- Multiple model comparison (LSTM, GRU, Galformer)
+- Market trend prediction
+- Performance metrics tracking
+- LLM-based market analysis
 
 ### Technical Analysis
-- Advanced technical indicators (RSI, MACD, Bollinger Bands)
+- RSI (Relative Strength Index)
+- Moving Averages (SMA20, SMA50)
 - Price action analysis
 - Volume analysis
-- Pattern recognition
 
-### Market Analysis
-- **LangGraph**: Market relationship graph for asset correlation analysis
-- **MemGPT**: Efficient memory system for market events
-- Combined analysis of news, technical indicators, and price action
-- Risk assessment and confidence scoring
+### Data Management
+- Automated market data fetching
+- CSV-based data storage
+- Historical data analysis
+- Real-time updates
 
 ## Setup
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/Raziyeh71/Autotrader.git
 cd AutoTrader
 ```
 
@@ -42,82 +37,62 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-3. Create a `venv.env` file in the project root:
-```env
-OPENAI_API_KEY=your_openai_api_key_here
+3. Copy `.env.example` to `.env` and add your OpenAI API key:
+```bash
+cp .env.example .env
+# Edit .env and add your OpenAI API key
 ```
 
 ## Usage
 
-1. Start the trading system:
+Run the trading system:
 ```bash
 python autotrader.py
 ```
 
-2. The system will:
-   - Monitor news for configured symbols
-   - Analyze market conditions
-   - Identify trading opportunities
-   - Execute trades based on confidence levels
+The system will:
+- Fetch market data for selected symbols
+- Calculate technical indicators
+- Compare model performances
+- Provide AI-powered market analysis
+- Store results in CSV format
 
-## Trading Universe
+## Model Comparison
 
-Default trading universe includes:
-- Cryptocurrencies: BTC-USD, ETH-USD
-- Tech Stocks: NVDA, AAPL, MSFT, AMD, GOOGL, AMZN, TSLA
+The system compares different models:
+- LSTM (Long Short-Term Memory)
+- GRU (Gated Recurrent Unit)
+- Galformer (Custom transformer architecture)
 
-## Output Format
+Performance metrics include:
+- MSE (Mean Squared Error)
+- MAE (Mean Absolute Error)
+- R² Score
 
-The system provides detailed analysis output:
+## Data Storage
 
-```
-Trading Opportunities:
-+----------+----------------+------------+------+-------------+------------------+
-| Symbol   | Recommendation | Confidence | Risk | News Driven | Primary Reason  |
-+----------+----------------+------------+------+-------------+------------------+
-| NVDA     | STRONG_BUY    | 0.92       | LOW  | Yes         | Positive AI chip|
-| BTC-USD  | BUY           | 0.85       | MED  | No          | Technical break |
-+----------+----------------+------------+------+-------------+------------------+
-```
+Market data is stored in CSV format:
+- Individual files per symbol
+- Updated on each run
+- Includes technical indicators
+- Human-readable format
 
-## Components
+## CI/CD Pipeline
 
-### NewsAgent
-- Fetches real-time news from Yahoo Finance
-- Analyzes news impact using GPT-4
-- Maintains memory of past news analysis
-
-### MarketAnalyzerAgent
-- Combines news, technical, and price analysis
-- Generates trading recommendations
-- Provides confidence scores and risk assessment
-
-### DeepLearningModels
-- Implements Galformer, LSTM, and GRU models
-- Includes few-shot learning for pattern recognition
-- Compares model performance
-
-## Risk Management
-
-- Position sizing based on risk percentage
-- Confidence-based trade execution
-- Multi-factor risk assessment
-- News-driven risk evaluation
-
-## Dependencies
-
-- TensorFlow for deep learning models
-- PyTorch for Galformer implementation
-- LangChain for graph-based analysis
-- OpenAI GPT-4 for news analysis
-- Beautiful Soup for news scraping
-- Pandas and NumPy for data manipulation
-- yfinance for market data
+The project includes GitHub Actions for:
+- Automated testing
+- Code quality checks
+- Security scanning
+- Coverage reporting
 
 ## Contributing
 
-Feel free to submit issues, fork the repository, and create pull requests for any improvements.
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
 
 ## License
 
-[MIT License](LICENSE)
+This project is licensed under the MIT License - see the LICENSE file for details.
